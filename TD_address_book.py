@@ -2,7 +2,7 @@ import csv
 import sys
 
 def create_csv(email_list, index=1):
-    with open(f'TB_address_newsletter_{index}.csv', 'w', newline='') as file:
+    with open(f'tb_address_book_{index}.csv', 'w', newline='') as file:
         fieldnames = ['name', 'surname', 'display_name', 'nickname', 'email']
         writer = csv.DictWriter(file, fieldnames=fieldnames)
         writer.writeheader()
@@ -16,7 +16,7 @@ def read_emails():
         with open('maile.txt', 'r') as f:
             emails = f.read().splitlines()
             emails = [el.strip() for el in emails]
-            return emailsa
+            return emails
     except FileNotFoundError as fnf:
         sys.exit(fnf)
 
